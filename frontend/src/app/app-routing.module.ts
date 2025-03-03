@@ -44,7 +44,7 @@ const routes: Routes = [
   { path: 'paiements', component: PaiementComponent },
   { path: 'conference/:id', component: ConferenceDetailComponent },
   { path: 'post', component: PostComponent },
-
+  { path: 'aboutus', component: AboutComponent },
 
   { path: '**', redirectTo: '' }
 ];

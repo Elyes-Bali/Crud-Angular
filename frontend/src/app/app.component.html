@@ -27,6 +27,9 @@
             !isParticipantLoggedIn && !isAdminLoggedIn && !isOrganizerLoggedIn
           "
         >
+        <button mat-button routerLink="/aboutus" routerLinkActive="active">
+          About Us
+        </button>
           <button mat-button routerLink="/signup" routerLinkActive="active">
             Register
           </button>
@@ -67,6 +70,9 @@
               <button mat-menu-item disabled>No new notifications</button>
             </ng-template>
           </mat-menu>
+          <button mat-button routerLink="/aboutus" routerLinkActive="active">
+            About Us
+          </button>
           <button mat-button routerLink="/conferences">Conferences</button>
           <button mat-button routerLink="/post">Posts</button>
 
@@ -77,6 +83,9 @@
         </ng-container>
 
         <ng-container *ngIf="isOrganizerLoggedIn">
+          <button mat-button routerLink="/aboutus" routerLinkActive="active">
+            About Us
+          </button>
           <!-- Profile Dropdown -->
           <button mat-button [matMenuTriggerFor]="profileMenu">Profile</button>
           <mat-menu #profileMenu="matMenu">
