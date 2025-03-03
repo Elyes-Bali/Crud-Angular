@@ -18,15 +18,15 @@ public class Paiement implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+
     private Long participant;
-    @NotBlank
+
     private Long amount;
-    @NotBlank
+
     private Long cardnumber;
-    @NotBlank
+
     private Long ccv ;
-    @NotBlank
+
     private String holder;
 
     @Column(nullable = false)
