@@ -21,6 +21,6 @@ public class Feedback {
     @ManyToOne
     @JoinColumn(name = "conference_id", nullable = false)
     private Conference conference; // The conference for which the feedback is given
-    @NotBlank
+
     private int rating;
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserStorageService } from './services/storage/user-storage.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { WebSocketService } from './services/webSocket/web-socket.service';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class AppComponent {
   constructor(
     private router: Router,
     private userStorageService: UserStorageService,
+    private webSocketService: WebSocketService
  
   ) {}
 
@@ -38,7 +40,15 @@ export class AppComponent {
       this.isOrganizerLoggedIn = UserStorageService.isOrganizerLoggedIn();
     });
    
- 
+    setTimeout(() => {
+      this.webSocketService.subscribeToNotifications(this.userId!);
+    }, 1000);
+
+    this.webSocketService.getNotifications().subscribe((notification) => {
+      console.log('Notification received:', notification);
+      this.notifications.push(notification);
+      console.log(this.notifications);
+    });
   }
 
   navigateToUpdate() {

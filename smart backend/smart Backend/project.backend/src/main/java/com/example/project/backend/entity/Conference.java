@@ -22,7 +22,7 @@ public class Conference implements Serializable {
     private String topic;
     @NotBlank
     private String location;
-    @NotBlank
+
     @JsonFormat(pattern = "dd-MM-yyyy")
     private Date deadline;
 

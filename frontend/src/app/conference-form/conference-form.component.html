@@ -52,24 +52,34 @@
         </div>
 
         <!-- Sessions -->
-        <label>Sessions</label>
-        <div *ngFor="let session of sessions">
-          <input 
-            type="checkbox" 
-            [value]="session.id" 
-            (change)="addSessionToConference(session)" />
-          <span>{{ session.topic }}</span>
-        </div>
+      <!-- Sessions -->
+<label>Sessions</label>
+<div class="checkbox-group">
+  <div *ngFor="let session of sessions" class="checkbox-item">
+    <input 
+      type="checkbox" 
+      [value]="session.id" 
+      (change)="addSessionToConference(session)" 
+      id="session-{{session.id}}" 
+    />
+    <label for="session-{{session.id}}">{{ session.topic }}</label>
+  </div>
+</div>
 
-        <!-- Resources -->
-        <label>Resources</label>
-        <div *ngFor="let ressource of ressources">
-          <input 
-            type="checkbox" 
-            [value]="ressource.id" 
-            (change)="addRessourceToConference(ressource)" />
-          <span>{{ ressource.name }}</span>
-        </div>
+<!-- Resources -->
+<label>Resources</label>
+<div class="checkbox-group">
+  <div *ngFor="let ressource of ressources" class="checkbox-item">
+    <input 
+      type="checkbox" 
+      [value]="ressource.id" 
+      (change)="addRessourceToConference(ressource)" 
+      id="resource-{{ressource.id}}" 
+    />
+    <label for="resource-{{ressource.id}}">{{ ressource.name }}</label>
+  </div>
+</div>
+
 
         <button type="submit" >Create Conference</button>
       </div>

@@ -142,3 +142,31 @@
     font-size: 0.9rem;
   }
   
+
+  /* Styling for checkboxes in a grid */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Spacing between items */
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f1f1f1;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkbox-item:hover {
+  background: #e1e1e1;
+}
+
+.checkbox-item input {
+  accent-color: #1abc9c;
+  width: 18px;
+  height: 18px;
+}
